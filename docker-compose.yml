@@ -1,0 +1,32 @@
+version: '3'
+services:
+  auth_backend:
+    restart: always
+    env_file:
+      - ./.env
+    build:
+      context: ./auth_backend
+      dockerfile: ./Dockerfile
+    ports:
+      - "5040:5040"
+    command: bash -c "uvicorn app:app --host 0.0.0.0 --port 5040"
+    volumes:
+     # This will allow to use same container without need to rebuild it if source code has changed
+     - ./auth_backend:/usr/src/app
+     - ./utils:/usr/src/app/utils
+  resource_backend:
+    restart: always
+    env_file:
+      - ./.env
+    build:
+      context: ./resource_backend
+      dockerfile: ./Dockerfile
+    ports:
+      - "5050:5050"
+    command: bash -c "uvicorn app:app --host 0.0.0.0 --port 5050"
+    volumes:
+     # This will allow to use same container without need to rebuild it if source code has changed
+     - ./resource_backend:/usr/src/app
+     - ./utils:/usr/src/app/utils
+  # webapp:
+  #   restart: always
