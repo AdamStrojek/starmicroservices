@@ -1,13 +1,8 @@
-from starlette.applications import Starlette as Application
+from utils.app import setup_app
 
 from . import settings
 from .routes import routes
+from .middlewares import middlewares
 
 
-def setup_app() -> Application:
-    middleware = []
-    app = Application(debug=settings.DEBUG, routes=routes, middleware=middleware)
-    return app
-
-
-app = setup_app()
+app = setup_app(settings, routes, middlewares)
