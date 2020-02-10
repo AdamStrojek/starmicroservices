@@ -1,5 +1,6 @@
 starlette==0.13.0
 uvicorn==0.10.8
+PyJWT==1.7.1
 
 aiohttp==3.6.2
 python-multipart==0.0.5
