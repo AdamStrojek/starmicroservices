@@ -18,11 +18,13 @@ different services. Great idea is to avoid coping it from one place to another. 
 library folder. Currently it is being used as shared volume between microservices, later it can be transformed into
 separate library that will be installed next to another files using requirements.txt file
 
+Project was created based on Python 3.7 using asyncio features
+
 ## Project structure
 
 List of source code included in repository
 
-- to be added later
+- `utils/` - this folder contains common components of application which are shared between different microservices
 
 
 ## Setup environment
