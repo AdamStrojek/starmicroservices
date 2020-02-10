@@ -1,6 +1,5 @@
 from typing import Any
 from datetime import datetime
-from starlette.endpoints import HTTPEndpoint
 from starlette.requests import Request
 
 from utils.resources import RetriveResource
@@ -8,7 +7,7 @@ from utils.responses import APIResponse
 
 
 class CurrentTimeResource(RetriveResource):
-    async def retrive(self, request: Request) -> APIResponse:
+    async def retrive(self, request: Request) -> Any:
         result = {
             'current_time': datetime.now().isoformat(),
         }
@@ -16,7 +15,7 @@ class CurrentTimeResource(RetriveResource):
 
 
 class EpochTimeResource(RetriveResource):
-    async def retrive(self, request: Request) -> APIResponse:
+    async def retrive(self, request: Request) -> Any:
         result = {
             'epoch_time': int(datetime.now().timestamp()),
         }

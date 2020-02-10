@@ -49,3 +49,9 @@ $ docker-compose up
 ```
 
 For docker and docker-compose installation please consult with [official documentation](https://docs.docker.com/install/)
+
+## Good practices
+Always create new microservice using boilerplate. This will allow in faster start of it. Also always include smoke endpoint
+which will allow to check status of service. It can be used later in CI and CD processes to check does all microservices
+started correctly to avoid situation that one of it is failing and we need to manually reset kubernetes deployment to older
+version.
