@@ -19,15 +19,15 @@ class BaseResource(HTTPEndpoint):
         else:
             user = {}
             data = {
-                'user': user
+                'user': user,
+                'token_valid': False,
             }
         request.state.data = data
 
     async def has_permission(self, request):
         for permission in self.permissions:
-            if not await permission(request):
-                return False
-        return True
+            if not (await permission(request)):
+                raise PermissionError(permission.message)
 
 
 class RetriveResource(abc.ABC, BaseResource):
@@ -38,8 +38,7 @@ class RetriveResource(abc.ABC, BaseResource):
     async def get(self, request: Request) -> APIResponse:
         await self.retrive_data(request)
 
-        if not await self.has_permission(request):
-            raise PermissionError('this user have no permission to this resource')
+        await self.has_permission(request)
 
         result = await self.retrive(request)
         return APIResponse(result)
@@ -53,8 +52,7 @@ class CreateResource(abc.ABC, BaseResource):
     async def post(self, request: Request) -> APIResponse:
         await self.retrive_data(request)
 
-        if not await self.has_permission(request):
-            raise PermissionError('this user have no permission to this resource')
+        await self.has_permission(request)
 
         result = await self.create(request)
         return APIResponse(result, status_code=201)
