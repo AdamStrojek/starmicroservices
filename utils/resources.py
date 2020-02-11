@@ -4,7 +4,7 @@ from starlette.endpoints import HTTPEndpoint
 from starlette.requests import Request
 
 from utils.permissions import Permission, ResourcePermission
-from utils.exceptions import PermissionError
+from utils.exceptions import PermissionError, TokenExpired
 from utils.token import retrive_token
 
 from .responses import APIResponse
@@ -15,8 +15,12 @@ class BaseResource(HTTPEndpoint):
 
     async def retrive_data(self, request):
         if 'x-token' in request.headers:
-            data = await retrive_token(request.headers['x-token'])
-        else:
+            try:
+                data = await retrive_token(request.headers['x-token'])
+            except TokenExpired:
+                data = None
+
+        if data is None:
             user = {}
             data = {
                 'user': user,
