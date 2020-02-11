@@ -19,6 +19,8 @@ class BaseResource(HTTPEndpoint):
                 data = await retrive_token(request.headers['x-token'])
             except TokenExpired:
                 data = None
+        else:
+            data = None
 
         if data is None:
             user = {}

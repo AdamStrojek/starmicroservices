@@ -13,7 +13,7 @@ class ResourcePermission(Permission):
         self.resource = resource
 
     async def __call__(self, request) -> bool:
-        status, data = await call_remote('auth', 'valid', request.headers, resource=self.resource)
+        status, data = await call_remote('get', 'auth', 'valid', request.headers, resource=self.resource)
         return status < 400
 
 
