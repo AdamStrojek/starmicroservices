@@ -1,6 +1,7 @@
 version: '3'
 services:
   auth_backend:
+    hostname: auth
     restart: always
     env_file:
       - ./.env
@@ -15,6 +16,7 @@ services:
      - ./auth_backend:/usr/src/app
      - ./utils:/usr/src/app/utils
   resource_backend:
+    hostname: resource
     restart: always
     env_file:
       - ./.env
@@ -28,5 +30,7 @@ services:
      # This will allow to use same container without need to rebuild it if source code has changed
      - ./resource_backend:/usr/src/app
      - ./utils:/usr/src/app/utils
+    links:
+      - "auth_backend:auth"
   # webapp:
   #   restart: always
