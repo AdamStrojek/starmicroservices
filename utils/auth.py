@@ -7,4 +7,4 @@ async def get_user_object(user=None):
 
 
 async def get_user_permissions(user=None):
-    return ['smoke']
+    return ['smoke', 'time']
