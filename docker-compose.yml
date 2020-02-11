@@ -32,5 +32,21 @@ services:
      - ./utils:/usr/src/app/utils
     links:
       - "auth_backend:auth"
-  # webapp:
-  #   restart: always
+  webapp:
+    hostname: webapp
+    restart: always
+    env_file:
+      - ./.env
+    build:
+      context: ./webapp
+      dockerfile: ./Dockerfile
+    ports:
+      - "5060:5060"
+    command: bash -c "uvicorn app:app --host 0.0.0.0 --port 5060"
+    volumes:
+     # This will allow to use same container without need to rebuild it if source code has changed
+     - ./webapp:/usr/src/app
+     - ./utils:/usr/src/app/utils
+    links:
+      - "auth_backend:auth"
+      - "resource_backend:resource"
