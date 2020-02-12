@@ -25,7 +25,15 @@ Project was created based on Python 3.7 using asyncio features
 List of source code included in repository
 
 - `utils/` - this folder contains common components of application which are shared between different microservices
+- `boilerplate_backend/` - this folder contains boilerplate for new microservices, to reduce code that need to be created
+and that cannot be shared between other applications
+- `auth_backend/` - this folder contains simple implementation of microservice that is responsible for authentication
+and authorization, using JWT, for other parts of project
+- `resource_backend/` - this folder contains simple microservice that is responsible for returning a current time based
+on permissions that are assigned for user
+- `webapp/` - this folder contains microservice that is example of using other parts of application in communication together
 
+Later this project can be spited into git submodules to separate source code of different parts of code.
 
 ## Setup environment
 
