@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "a14f3966-dbe5-4f29-96f4-572ae66ccc04",
+		"name": "Resources",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Smoke Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5050/api/v1/smoke/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"v1",
+						"smoke",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Current Time",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQ2NTMxOTcuNDk3NTQzLCJkYXRhIjp7InVzZXIiOnsicGVybWlzc2lvbnMiOlsic21va2UiLCJ0aW1lIl19LCJ0b2tlbl92YWxpZCI6dHJ1ZX19.cJocb0xlC_oJnTLseKJ8OC4IV5KeYHfTyOKTTiOzQmI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5050/api/v1/time/current_time",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"v1",
+						"time",
+						"current_time"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Epoch Time",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Token",
+						"type": "text",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQ2NTMxOTcuNDk3NTQzLCJkYXRhIjp7InVzZXIiOnsicGVybWlzc2lvbnMiOlsic21va2UiLCJ0aW1lIl19LCJ0b2tlbl92YWxpZCI6dHJ1ZX19.cJocb0xlC_oJnTLseKJ8OC4IV5KeYHfTyOKTTiOzQmI"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5050/api/v1/time/epoch_time",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"v1",
+						"time",
+						"epoch_time"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "2fca693f-d843-41a5-84cf-afba23ace4be",
+		"name": "WebApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Smoke Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5060/api/v1/smoke/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5060",
+					"path": [
+						"api",
+						"v1",
+						"smoke",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Current Time",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5060/api/v1/time/current_time",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5060",
+					"path": [
+						"api",
+						"v1",
+						"time",
+						"current_time"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Epoch Time",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5060/api/v1/time/epoch_time",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5060",
+					"path": [
+						"api",
+						"v1",
+						"time",
+						"epoch_time"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

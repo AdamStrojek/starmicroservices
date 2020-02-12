@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "210e0f39-7033-4eae-9c37-b07f06188c2d",
+		"name": "Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Smoke Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5040/api/v1/smoke/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5040",
+					"path": [
+						"api",
+						"v1",
+						"smoke",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5040/api/v1/auth/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5040",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token Valid",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQ2NTE2NDkuMzE5NjU0LCJkYXRhIjp7InVzZXIiOnsicGVybWlzc2lvbnMiOlsic21va2UiLCJ0aW1lIl19LCJ0b2tlbl92YWxpZCI6dHJ1ZX19.D9oezJ0ctmBW2jvY2grfw-1hZR_znSEqYq5u5CuwNow",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5040/api/v1/auth/valid?resource=smoke",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5040",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"valid"
+					],
+					"query": [
+						{
+							"key": "resource",
+							"value": "smoke"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
