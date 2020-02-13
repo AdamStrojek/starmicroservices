@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2fca693f-d843-41a5-84cf-afba23ace4be",
+		"_postman_id": "f17ef3ee-47c2-453e-8c21-3c6cfb0bd3cb",
 		"name": "WebApp",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,12 +11,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5060/api/v1/smoke/",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{webapp_host}}/api/v1/smoke/",
+					"protocol": "{{protocol}}",
 					"host": [
-						"localhost"
+						"{{webapp_host}}"
 					],
-					"port": "5060",
 					"path": [
 						"api",
 						"v1",
@@ -33,12 +32,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5060/api/v1/time/current_time",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{webapp_host}}/api/v1/time/current_time",
+					"protocol": "{{protocol}}",
 					"host": [
-						"localhost"
+						"{{webapp_host}}"
 					],
-					"port": "5060",
 					"path": [
 						"api",
 						"v1",
@@ -55,12 +53,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5060/api/v1/time/epoch_time",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{webapp_host}}/api/v1/time/epoch_time",
+					"protocol": "{{protocol}}",
 					"host": [
-						"localhost"
+						"{{webapp_host}}"
 					],
-					"port": "5060",
 					"path": [
 						"api",
 						"v1",

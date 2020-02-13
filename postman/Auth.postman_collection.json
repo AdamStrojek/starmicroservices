@@ -11,12 +11,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5040/api/v1/smoke/",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{auth_host}}/api/v1/smoke/",
+					"protocol": "{{protocol}}",
 					"host": [
-						"localhost"
+						"{{auth_host}}"
 					],
-					"port": "5040",
 					"path": [
 						"api",
 						"v1",
@@ -33,12 +32,11 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5040/api/v1/auth/create",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{auth_host}}/api/v1/auth/create",
+					"protocol": "{{protocol}}",
 					"host": [
-						"localhost"
+						"{{auth_host}}"
 					],
-					"port": "5040",
 					"path": [
 						"api",
 						"v1",
@@ -61,12 +59,11 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:5040/api/v1/auth/valid?resource=smoke",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{auth_host}}/api/v1/auth/valid?resource=smoke",
+					"protocol": "{{protocol}}",
 					"host": [
-						"localhost"
+						"{{auth_host}}"
 					],
-					"port": "5040",
 					"path": [
 						"api",
 						"v1",

@@ -6,28 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "Smoke Test",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5050/api/v1/smoke/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5050",
-					"path": [
-						"api",
-						"v1",
-						"smoke",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Current Time",
 			"request": {
 				"method": "GET",
@@ -39,12 +17,11 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:5050/api/v1/time/current_time",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{resource_host}}/api/v1/time/current_time",
+					"protocol": "{{protocol}}",
 					"host": [
-						"localhost"
+						"{{resource_host}}"
 					],
-					"port": "5050",
 					"path": [
 						"api",
 						"v1",
@@ -67,17 +44,37 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:5050/api/v1/time/epoch_time",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{resource_host}}/api/v1/time/epoch_time",
+					"protocol": "{{protocol}}",
 					"host": [
-						"localhost"
+						"{{resource_host}}"
 					],
-					"port": "5050",
 					"path": [
 						"api",
 						"v1",
 						"time",
 						"epoch_time"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Smoke Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{resource_host}}/api/v1/smoke/",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{resource_host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"smoke",
+						""
 					]
 				}
 			},
