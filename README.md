@@ -32,6 +32,8 @@ and authorization, using JWT, for other parts of project
 - `resource_backend/` - this folder contains simple microservice that is responsible for returning a current time based
 on permissions that are assigned for user
 - `webapp/` - this folder contains microservice that is example of using other parts of application in communication together
+- `postman/` - this folder contains sample Postman collections that help in starting development process. No longer need
+to guess what endpoint and how it should be called
 
 Later this project can be spited into git submodules to separate source code of different parts of code.
 
@@ -63,3 +65,15 @@ Always create new microservice using boilerplate. This will allow in faster star
 which will allow to check status of service. It can be used later in CI and CD processes to check does all microservices
 started correctly to avoid situation that one of it is failing and we need to manually reset kubernetes deployment to older
 version.
+
+## Usage
+This application implements 3 microservices. Each of it have own purpose for this application, here is short description
+for them. For more details about endpoints check `/schema` endpoint which produces
+[OpenAPI 3](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md)
+
+- `auth_backend` - microservice responsible for authentication and authorisation of user. You have two endpoint, first is
+responsible for creating new token, which you provide as `X-Token` header, in JWT format, second is responsible for verifing
+permissions
+- `resource_backend`- microservice responsible for providing resources to rest of application. This POC project is providing
+only time in ISO-8601 format and timestamp
+- `webapp` - microservice that was created as demo microservice that is contacting other microservices
